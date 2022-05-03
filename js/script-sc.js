@@ -12,9 +12,16 @@ const app = new Vue({
             
             this.counter++
             console.log()
-            const lengths = slides.length
             if(this.counter === this.images.length  ){
                 this.counter = 0
+            }
+        },
+        preImg(){
+            
+            this.counter--
+            console.log()
+            if(this.counter < 0  ){
+                this.counter = this.images.length -1
             }
         }
     },
