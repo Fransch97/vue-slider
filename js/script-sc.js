@@ -4,10 +4,14 @@ const app = new Vue({
     data:{
         images : slides,
         counter : 2,
-        smallImgActive : 0
+        smallImgActive : 0,
+        next : null
+        
     },
 
     methods: {
+
+
         nextImg(){
             
             this.counter++
@@ -16,14 +20,30 @@ const app = new Vue({
                 this.counter = 0
             }
         },
-        preImg(){
+
+
+        nextInterval(){
+                this.next = setInterval(()=>{
+                    this.nextImg()
+                },3000)
             
+        },
+
+        stopNextInterval(){
+            clearInterval(this.next)
+            console.log("stop")
+
+        },
+
+        preImg(){
             this.counter--
             console.log()
             if(this.counter < 0  ){
                 this.counter = this.images.length -1
             }
         }
+
+
     },
 
     
@@ -31,9 +51,7 @@ const app = new Vue({
     mounted() {
         console.log("working");
         console.log(this.images, "imges now");
-        const nextInterval = setInterval(()=>{
-            this.preImg()
-        },3000)
+        (!this.hoverControl)?this.nextInterval(): this.stopNextInterval();
     }
 
 })
