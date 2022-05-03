@@ -31,6 +31,9 @@ const app = new Vue({
     mounted() {
         console.log("working");
         console.log(this.images, "imges now");
+        const nextInterval = setInterval(()=>{
+            this.preImg()
+        },3000)
     }
 
 })
