@@ -3,9 +3,10 @@ const app = new Vue({
 
     data:{
         images : slides,
-        counter : 2,
+        counter : 0,
         smallImgActive : 0,
-        next : null
+        next : null,
+        pre: null
         
     },
 
@@ -21,7 +22,6 @@ const app = new Vue({
             }
         },
 
-
         nextInterval(){
                 this.next = setInterval(()=>{
                     this.nextImg()
@@ -29,9 +29,22 @@ const app = new Vue({
             
         },
 
+        preInterval(){
+            this.pre = setInterval(()=>{
+                this.nextImg()
+            },3000)
+        
+        },
+
         stopNextInterval(){
             clearInterval(this.next)
-            console.log("stop")
+            console.log("stop NEXT")
+
+        },
+        
+        stopPreInterval(){
+            clearInterval(this.pre)
+            console.log("stop PRE")
 
         },
 
@@ -51,7 +64,7 @@ const app = new Vue({
     mounted() {
         console.log("working");
         console.log(this.images, "imges now");
-        (!this.hoverControl)?this.nextInterval(): this.stopNextInterval();
+        this.nextInterval();
     }
 
 })
