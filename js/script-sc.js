@@ -2,7 +2,8 @@ const app = new Vue({
     el: "#app",
 
     data:{
-
+        images : slides,
+        counter : 0
     },
 
     methods: {
@@ -12,8 +13,8 @@ const app = new Vue({
     
 
     mounted() {
-        console.log("working")
-        console.log(slides)
+        console.log("working");
+        console.log(this.images, "imges now");
     }
 
 })
