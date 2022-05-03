@@ -8,7 +8,15 @@ const app = new Vue({
     },
 
     methods: {
-        
+        nextImg(){
+            
+            this.counter++
+            console.log()
+            const lengths = slides.length
+            if(this.counter === this.images.length  ){
+                this.counter = 0
+            }
+        }
     },
 
     
