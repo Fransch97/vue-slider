@@ -30,20 +30,20 @@
                 <div class="thumbs">
                     <div class="prev"></div>
                     <div class="next"></div>
-                    <div class="thumb active">
-                        <img :src="images[0].image" @click = "counter = 0" alt="Svezia"/>
+                    <div class="thumb" @click = "counter = 0" :class ="counter === 0? 'active' : ''">
+                        <img :src="images[0].image"  alt="Svezia"/>
                     </div>
-                    <div class="thumb">
-                        <img :src="images[1].image" @click = "counter = 1" alt="Svizzera" />
+                    <div class="thumb" @click = "counter = 1" :class = "counter === 1? 'active':''">
+                        <img :src="images[1].image"  alt="Svizzera" />
                     </div>
-                    <div class="thumb">
-                        <img :src="images[2].image" @click = "counter = 2" alt="Gran Bretagna" />
+                    <div class="thumb" @click = "counter = 2" :class = "counter === 2? 'active':''">
+                        <img :src="images[2].image"  alt="Gran Bretagna" />
                     </div>
-                    <div class="thumb">
-                        <img :src="images[3].image" @click = "counter = 3" alt="Germania" />
+                    <div class="thumb"  @click = "counter = 3" :class = "counter === 3?'active':''">
+                        <img :src="images[3].image" alt="Germania" />
                     </div>
-                    <div class="thumb">
-                        <img :src="images[4].image" @click = "counter = 4" alt="Paradise" />
+                    <div class="thumb" @click = "counter = 4" :class = "counter === 4? 'active':''">
+                        <img :src="images[4].image"  alt="Paradise" />
                     </div>
                 </div>
 

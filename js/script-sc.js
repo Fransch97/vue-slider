@@ -3,7 +3,8 @@ const app = new Vue({
 
     data:{
         images : slides,
-        counter : 0
+        counter : 2,
+        smallImgActive : 0
     },
 
     methods: {
