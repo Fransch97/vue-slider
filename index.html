@@ -32,12 +32,12 @@
 
                 <div class="thumbs">
 
-                    <div class="prev" @click ="stopNextInterval()"></div>
-                    <div class="next" @click = "nextImg"></div>
+                    <div class="prev" @click ="preImg()"></div>
+                    <div class="next" @click = "nextImg()"></div>
                     <div v-for="(oggetto, index) in images"  class="thumb" @click = "counter = index" :class ="counter === index? 'active' : ''">
                         <img :src="oggetto.image"  alt="Svezia"/>
                     </div>
-                    
+
                 </div>
 
             </div>
